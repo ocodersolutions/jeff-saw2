@@ -42,7 +42,7 @@ index.php.sample
 js/blank.html 
 js/calendar/ 
 js/enterprise/ 
-/extjs/ 
+js/extjs/ 
 js/firebug/ 
 js/flash/ 
 js/index.php 
