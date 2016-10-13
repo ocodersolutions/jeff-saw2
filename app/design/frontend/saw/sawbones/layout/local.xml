@@ -3,7 +3,7 @@
  
         <reference name="head">
             <!--Adding JS Files Styles-->
-             <action method="addItem"><type>skin_js</type><name>js/common.js</name><params/></action>
+             <action method="addItem"><type>skin_js</type><name>js/webflow.js</name><params/></action>
             <!-- <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>js/jquery.carouFredSel-6.2.1-packed.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>js/jquery.easing.1.3.js</name><params/></action>
@@ -17,7 +17,7 @@
             <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/sawbones-product-homepage.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/custom.css</stylesheet><params/></action>
-            <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
+            
            <!--  <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/flexslider.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/owl.carousel.css</stylesheet><params/></action>
