@@ -61,37 +61,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <?php }else{ ?>
-
-
-                            <div class="addtocartbutton" style="margin-left: 12px;">
-                        <div class="addtocarttext">
-
-
-
-                            <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                            <button style="background: none;" type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span>
-                            </button>
-                            <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
-                            <a style="color: white;" title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" href="<?php echo $_product->getProductUrl() ?>">
-                                <?php echo $this->__('View Details') ?></a>
-                            <?php else: ?>
-                            <?php echo $this->__('Out of stock') ?>
-                            <?php endif; ?>
-
-                        </div>
-                    </div>
-
-                    <div class="addtomylists">
-                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                        <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>">
-                            <?php echo $this->__('Add to Wishlist') ?></a>
-                        <?php endif; ?>
-                    </div>
-
-
-
-                    <?php    } ?>
+                    <?php } ?>
 
 
 
