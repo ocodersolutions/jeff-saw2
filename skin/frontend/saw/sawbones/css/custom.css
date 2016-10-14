@@ -127,10 +127,6 @@ a.skip-cart {
     width: auto;
     padding: 0px 10px;
 }
-a.skip-cart:before{
-  content: "\f07a";
-  font-family: Fontawesome;
-}
 .skip-link {
     position: relative;
     float: left;

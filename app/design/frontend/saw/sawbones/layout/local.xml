@@ -17,6 +17,7 @@
             <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/sawbones-product-homepage.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/custom.css</stylesheet><params/></action>
+            <action method="addCss"><stylesheet>css/product_detail.css</stylesheet><params/></action>
             
            <!--  <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet><params/></action>
             <action method="addCss"><stylesheet>css/flexslider.css</stylesheet><params/></action>
