@@ -41,31 +41,43 @@
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
-<?php echo $this->getChildHtml('after_body_start') ?>
-<div class="wrapper">
-    <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page">
-        <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col2-left-layout">
-            <div class="main">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <?php // This left_first block will display above the main content on smaller viewports ?>
-                <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
-                <div class="col-left sidebar col-left-first"><?php echo $_leftContent;   ?></div>
-                <?php endif; ?>
-                <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
-                </div>
-                <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
-            </div>
+<body class="body">
+<div class="section-header"><div class="navbar w-nav" data-animation="default" data-collapse="medium" data-contain="1" data-duration="400"><div class="nav-container w-container"><a class="brandwrap w-clearfix w-nav-brand" href="#"><img class="sawboneslogo" src="http://uploads.webflow.com/57994ac141136a134b02557d/57a600cec3e841c509ebf7a2_sawbones-logo-white.png" width="215"></a><nav class="nav-menu w-nav-menu" role="navigation"><a class="active nav-link w-nav-link" href="#" style="max-width: 940px;">Products&nbsp;<span class="fa-blue"></span></a><a class="nav-link w-nav-link" href="#" style="max-width: 940px;">Materials &amp; Use Guide&nbsp;<span class="fa-blue"></span></a><a class="nav-link w-nav-link" href="#" style="max-width: 940px;">Custom Models&nbsp;<span class="fa-blue"></span></a></nav><div class="menubutton w-nav-button"><div class="icon w-icon-nav-menu"></div></div></div><div class="search"><h3 class="searchicon"></h3></div><div class="w-nav-overlay" data-wf-ignore=""></div></div></div>
+
+
+
+
+<?php // echo $this->getChildHtml('after_body_start') ?>
+<div class="section1 section1proddetail">
+
+    <div class="breadcrumbs"><span class="breadnotcurrentlisting">Home&nbsp;</span>/&nbsp;<span class="breadnotcurrentlisting">Orthopaedic Models</span>&nbsp;/&nbsp;<span class="breadcurrent">Pelvis-Full</span></div>
+
+
+    <div class="cartcheckoutwrap w-clearfix"><div class="checkoutwrap"><h4 class="checktext">Checkout</h4></div><div class="cartwrap"><h1 class="carttext">0<span class="fa checkout"></span></h1></div></div>
+
+
+
+
+
+
+    <div class="w-row">
+        <div class="w-col w-col-3">
+            <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
+            <?php echo $_leftContent;   ?>
+            <?php endif; ?>
         </div>
-        <?php echo $this->getChildHtml('footer_before') ?>
-        <?php echo $this->getChildHtml('footer') ?>
-        <?php echo $this->getChildHtml('global_cookie_notice') ?>
-        <?php echo $this->getChildHtml('before_body_end') ?>
-    </div>
+        <div class="w-col w-col-9">
+            <?php echo $this->getChildHtml('global_messages') ?>
+            <?php echo $this->getChildHtml('content') ?>
+        </div>
+
+
+
+
+
+       
+
+        </div>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
