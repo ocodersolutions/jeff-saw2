@@ -1,3 +1,49 @@
+<div class="block block-related left">
+    <div class="block-title">
+        <h2>Videos </h2>
+    </div>
+    <div class="prodvideoslider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
+    <div class="w-slider-mask">
+        <div class="prodvideoslides w-slide" style="transform: translateX(0px); opacity: 1;">
+            <div class="prodvideo">
+                <h1 class="prodvidplay"></h1>
+            </div>
+        </div>
+        <div class="prodvideoslides w-slide" style="transform: translateX(0px); opacity: 1;">
+            <div class="prodvideo">
+                <h1 class="prodvidplay"></h1>
+            </div>
+        </div>
+        <div class="prodvideoslides w-slide" style="transform: translateX(0px); opacity: 1;">
+            <div class="prodvideo">
+                <h1 class="prodvidplay"></h1>
+            </div>
+        </div>
+        <div class="prodvideoslides w-slide" style="transform: translateX(0px); opacity: 1;">
+            <div class="prodvideo">
+                <h1 class="prodvidplay"></h1>
+            </div>
+        </div>
+        <div class="prodvideoslides w-slide" style="transform: translateX(0px); opacity: 1;">
+            <div class="prodvideo">
+                <h1 class="prodvidplay"></h1>
+            </div>
+        </div>
+        <div class="prodvideoslides w-slide" style="transform: translateX(0px); opacity: 1;">
+            <div class="prodvideo">
+                <h1 class="prodvidplay"></h1>
+            </div>
+        </div>
+    </div>
+    <div class="w-slider-arrow-left">
+        <div class="w-icon-slider-left"></div>
+    </div>
+    <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right"></div>
+    </div>
+</div>
+</div>       
+
 <?php if($this->getItems()->getSize()): ?>
 <div class="block block-related">
     <div class="block-title">
@@ -27,7 +73,7 @@
                 </div>
             </li> -->
             <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                <img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(240) ?>" alt="slider">
+                <img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(170) ?>" alt="slider">
                 <div class="relatedproddetes">
                     <h4 class="relatedprodtitle"><a href="<?php echo $_item->getProductUrl() ?>" class="relatedprodtitle"><?php echo $this->escapeHtml($_item->getName()) ?></a></h4>
                     <div class="detailslink related-proddetails"><a href="<?php echo $_item->getProductUrl() ?>" >View Details<span class="fa view-details"></span></a>

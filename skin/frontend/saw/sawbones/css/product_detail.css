@@ -120,6 +120,9 @@
 	width: 100%;
 	text-align: center;	
 }
+.block-content p.block-subtitle{
+	display: none;
+}
 .relatedproductslider{
 	height: auto;
 }
@@ -134,7 +137,13 @@
 	color: #fff;
 	text-decoration: none;
 }
-	
+.block-related .block-title{
+	border-top: none;
+}
+.left{
+	float: left !important;
+	width: 50%;
+}	
 @media (min-width:768){
 	
 }
