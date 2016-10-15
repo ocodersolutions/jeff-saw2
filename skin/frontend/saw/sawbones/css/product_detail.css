@@ -143,6 +143,12 @@
 .left{
 	float: left !important;
 	width: 50%;
+}
+.product-collateral.toggle-content.tabs{
+	display: none;
+}
+.what_hots{
+	float: left;
 }	
 @media (min-width:768){
 	
