@@ -1,0 +1,62 @@
+<div class="section-header">
+    <div class="navbar w-nav">
+        <div class="nav-container w-container">
+            <a class="brandwrap w-clearfix w-nav-brand" href="<?php echo $this->getUrl('') ?>">
+            <img class="sawboneslogo" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
+            </a>
+            <nav class="nav-menu w-nav-menu" role="navigation">
+            <?php 
+                $_helper = Mage::helper('catalog/category');
+                $_categories = $_helper->getStoreCategories();
+                if (count($_categories) > 0){
+                    foreach($_categories as $_category){
+                        $_category = Mage::getModel('catalog/category')->load($_category->getId());
+                        $_subcategories = $_category->getCategories();
+                        $_sub2categories = $_category->getChildrenCategories();
+                        if (count($_subcategories) > 0){?>
+                            <li class="nav-link w-nav-link">
+                                <a  href="<?php echo $_category->getUrl();?>" style="max-width: 940px;"><?php echo $_category->getName();?></a><span class="fa-blue"></span>
+                               <?php  if (count($_sub2categories) > 0){?>
+                                 <ul class="sub-menu">
+                                <?php foreach($_sub2categories as $_subcategory){?>
+                                   
+                                        <li class="nav-link w-nav-link">
+                                            <a  href="<?php echo $_subcategory->getUrl();?>" style="max-width: 940px;"><?php echo $_subcategory->getName();?></a><span class="fa-blue"></span>
+                                        </li>
+                                    
+                                    <?php
+                                     }
+                                    ?> </ul><?php
+                               }?>
+                            </li>
+                            <?php
+                            // echo $_category->getName();
+                            // echo $_category->getId();
+                            // echo $_category->getUrl();       
+                            
+                        }
+                    }
+                }
+                ?>
+                <!-- <li class="active nav-link w-nav-link">
+                    <a  href="#" style="max-width: 940px;">Products&nbsp;</a><span class="fa-blue"></span>
+                </li> -->
+                <!-- <li class="active nav-link w-nav-link">
+                    <a  href="#" style="max-width: 940px;">Materials &amp; Use Guide&nbsp;</a><span class="fa-blue"></span>
+                </li>
+                <li class="active nav-link w-nav-link">
+                    <a  href="#" style="max-width: 940px;">Custom Models&nbsp;</a><span class="fa-blue"></span>
+                </li> -->
+                
+            </nav>
+            <div class="menubutton w-nav-button">
+                <div class="icon w-icon-nav-menu"></div>
+            </div>
+        </div>
+
+        <div class="search">
+            <h3 class="searchicon"> Enter keyword or item #</h3>
+        </div>
+        <div class="w-nav-overlay"></div>
+    </div>
+</div>
