@@ -5,8 +5,8 @@
 
     <?php if( $this->isExpanded() ): ?>
         <div class=" filterbarcol1 w-col w-col-3 w-col-stack">
-            <div class="view-mode sortby" style="margin-right: 0px;"><?php echo $this->__('Sort by:') ?></div>
-            <select class="sortbydrop w-clearfix" onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sort By')) ?>">
+            <div class="view-mode sortby"><?php echo $this->__('Sort by:') ?></div>
+            <select style="height: 30px" class="sortbydrop w-clearfix" onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sort By')) ?>">
                 <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
                     <option class="left pagenumlisting" value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
                         <?php echo $this->__($_order) ?>
@@ -20,7 +20,7 @@
                 <p class="view-mode">
                     <?php $_modes = $this->getModes(); ?>
                     <?php if($_modes && count($_modes)>1): ?>
-                        <label><?php echo $this->__('View as') ?></label>
+                        <label style="display: block; margin-top: 5px;"><?php echo $this->__('View as') ?></label>
                         <?php foreach ($this->getModes() as $_code=>$_label): ?>
                             <?php if($this->isModeActive($_code)): ?>
                                 <strong title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><?php echo $_label ?></strong>

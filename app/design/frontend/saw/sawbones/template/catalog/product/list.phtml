@@ -10,12 +10,12 @@ if($this->getMode()!='grid'):
     <div class="listingrow w-row">
         <div class="listingcol1 w-col w-col-2 w-col-stack">
             <?php $_imgSize=300; ?>
-            <img style="height: 194px;" id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+            <a style="color: black;" href="<?php echo $_product->getProductUrl() ?>"?><img style="height: 194px;" id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
         </div>
         <div class="listingcol2 w-col w-col-5 w-col-stack">
             <div class="listingcol2paddingdiv">
                 <div class="itemdetinfotext listinginfo">
-                    <?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?>
+                    <a style="color: black;" href="<?php echo $_product->getProductUrl() ?>"?><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a>
                     <br><span class="itemdetbigandbold"><?php echo ($currency_symbol = Mage::app()->getLocale()->currency( $currency_code )->getSymbol()); echo number_format($_product->getPrice(), 2, '.', '') ?></span>&nbsp; &nbsp;EA &nbsp; &nbsp; Lead Time: <span class="itemdetbold">14 days</span>
                 </div>
                 <div class="addtocartwrap listing">
@@ -53,7 +53,7 @@ if($this->getMode()!='grid'):
                                     <?php if($_product->getStockItem() && $_product->getStockItem()->getIsInStock()){ echo $this->__('View Details'); } ?></div>
                             </a>
                         </div>
-                        <div class="addtomylists">
+                        <div class="addtomylists" style="clear: both">
                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
                             <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>">
                                 <?php echo $this->__('Add to Wishlist') ?></a>
@@ -72,7 +72,7 @@ if($this->getMode()!='grid'):
                 <br>Orientation:&nbsp;N/A
                 <br>
                 <br><span class="itemdetailtextsmall">
-            <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+            <?php echo substr($_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description'),0,110); ?>
                         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
         </span>
             </div>
