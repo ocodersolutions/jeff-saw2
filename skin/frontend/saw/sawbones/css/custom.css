@@ -1,6 +1,8 @@
-.sub-menu{
-  display: none;
+.page .section-header{
+  z-index: 9999;
 }
+/* navbar*/
+
 .main-container.col2-left-layout{
   padding-top: 0;
 }
@@ -30,58 +32,65 @@ li.level-top a:hover{
   height: 50px;
 }
 @media (min-width: 768px){
+  a.nav-link:hover,a.nav-link:focus,a.nav-link:active{
+  text-decoration: none;
+  color: #fff;
+  }
+  ul.sub-menu{
+      background: #537d96;
+      border: solid 1px #cccccc;
+      position: absolute;
+      left: 0;
+      top: 62px;
+      z-index: 10;
+      width: 250px;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: none;
+  }
+  ul.sub-menu li.sub1{
+    position: relative;
+    display:block;
+    padding: 10px 20px;
+  }
+  ul.sub-menu li a.nav-link{
+    padding:0;
+    line-height: 20px;
+  }
+  ul.sub-menu li span{
+    position: absolute;
+    color: #fff;
+  }
+  
   .navbar.w-nav .w-container {
     width: 100%;
+  }
+   ul.sub-menu li.sub1:hover > ul.sub1-menu{
+    display: block;
+   }
+  ul.sub-menu li.sub1 ul.sub1-menu{
+    padding: 0 10px;
+    display: none;
+    position: absolute;
+    width: 250px;
+    top: 0;
+    left: 100%;
+    background: #537d96;
+    border: solid 1px #cccccc;
   }
   nav.nav-menu.w-nav-menu{
     display: block;
     position: absolute;
     left: 215px;
   }
+  li.nav-link:hover  ul.sub-menu{
+    display: block;
+  }
   .nav-container #nav{
     padding:0;
     margin:0;
   }
-  li.level-top{
-  position: relative;
-  display: inline-block;
-  }
-  li.level-top:hover{
-    cursor: pointer;
-  }
-  li.level-top a.level-top:after{
-    content: "\f0d7";
-    position: relative;
-    top: 2px;
-    right: -2px;
-    font-family: Fontawesome, sans-serif;
-    color: #537d96;
-    font-size: 18px;
-  }
   
-  
-  li.level-top > ul{
-    //display:none;
-  }
-  li.level-top:hover > ul.level0{
-    //display: block;
-  }
-  ul.level0{
-    display: none;
-    width: 250px;
-    padding: 0;
-    position: absolute;
-    background-color: #537d96;
-  }
-  ul.level0 > li{
-    list-style-type: none;
-  }
-  li.level-top:hover > ul.level0{
-    display: block;
-  }
-  ul.level0 a{
-    padding:5px;
-  }
 }
 @media (max-width: 767px){
 

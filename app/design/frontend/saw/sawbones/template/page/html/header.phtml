@@ -15,25 +15,34 @@
                         $_sub2categories = $_category->getChildrenCategories();
                         if (count($_subcategories) > 0){?>
                             <li class="nav-link w-nav-link">
-                                <a  href="<?php echo $_category->getUrl();?>" style="max-width: 940px;"><?php echo $_category->getName();?></a><span class="fa-blue"></span>
+                                <a class="nav-link" href="<?php echo $_category->getUrl();?>" ><?php echo $_category->getName();?></a><span class="fa-blue"></span>
                                <?php  if (count($_sub2categories) > 0){?>
                                  <ul class="sub-menu">
-                                <?php foreach($_sub2categories as $_subcategory){?>
-                                   
-                                        <li class="nav-link w-nav-link">
-                                            <a  href="<?php echo $_subcategory->getUrl();?>" style="max-width: 940px;"><?php echo $_subcategory->getName();?></a><span class="fa-blue"></span>
+                                <?php foreach($_sub2categories as $_subcategory){
+                                     $_category2 = Mage::getModel('catalog/category')->load($_subcategory->getId());
+                                        $_subcategories2 = $_category2->getChildrenCategories();
+                                    ?>
+                                        <li class="sub1 w-nav-link">
+                                            <a class="nav-link" href="<?php echo $_subcategory->getUrl();?>"><?php echo $_subcategory->getName();?></a><span class="fa-blue"></span>
+                                            <?php if(count($_subcategories2) >0 ){?>
+                                                <ul class="sub1-menu">
+                                                <?php foreach ($_subcategories2 as $_subcategory2) {?>
+                                                    <li class="sub1 w-nav-link">
+                                                        <a class="nav-link" href="<?php echo $_subcategory2->getUrl();?>"><?php echo $_subcategory2->getName();?></a><span class="fa-blue"></span>
+                                                    </li>
+                                                <?php }?>
+
+                                                </ul>
+                                            <?php }?>
+                                            
                                         </li>
                                     
-                                    <?php
-                                     }
-                                    ?> </ul><?php
+                                    <?php } ?> 
+                                 </ul>
+                                <?php
                                }?>
                             </li>
                             <?php
-                            // echo $_category->getName();
-                            // echo $_category->getId();
-                            // echo $_category->getUrl();       
-                            
                         }
                     }
                 }
@@ -55,7 +64,7 @@
         </div>
 
         <div class="search">
-            <h3 class="searchicon"> Enter keyword or item #</h3>
+             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
         <div class="w-nav-overlay"></div>
     </div>
