@@ -32,22 +32,9 @@
 </head>
 
 <body class="body">
-    <div class="section-header">
-        <div class="navbar w-nav" data-animation="default" data-collapse="medium" data-contain="1" data-duration="400">
-            <div class="nav-container w-container">
-                <a class="brandwrap w-clearfix w-nav-brand" href="#"><img class="sawboneslogo" src="http://uploads.webflow.com/57994ac141136a134b02557d/57a600cec3e841c509ebf7a2_sawbones-logo-white.png" width="215">
-                </a>
-                <nav class="nav-menu w-nav-menu" role="navigation"><a class="active nav-link w-nav-link" href="#">Products&nbsp;<span class="fa-blue"></span></a><a class="nav-link w-nav-link" href="#">Materials &amp; Use Guide&nbsp;<span class="fa-blue"></span></a><a class="nav-link w-nav-link" href="#">Custom Models&nbsp;<span class="fa-blue"></span></a>
-                </nav>
-                <div class="menubutton w-nav-button">
-                    <div class="icon w-icon-nav-menu"></div>
-                </div>
-            </div>
-            <div class="search">
-                <h3 class="searchicon"> Enter keyword or item #</h3>
-            </div>
-        </div>
-    </div>
+
+    <?php echo $this->getChildHtml('header') ?>
+    
     <div class="section1">
         <div class="top-slider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
             <div class="top-slider-masks w-slider-mask">

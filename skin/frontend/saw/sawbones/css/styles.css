@@ -597,7 +597,14 @@ h6, .h6 {
   text-rendering: optimizeSpeed;
   text-transform: uppercase;
 }
-
+dl.last{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+dd.clearfix.swatch-attr{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
 /* ============================================ *
  * Shared Classes
  * ============================================ */
@@ -1972,6 +1979,9 @@ span.weee {
  */
 .add-to-links {
   margin: 7px 0;
+  width: 65%;
+  float: right;
+  padding-left: 0px;
 }
 .add-to-links a {
   display: inline-block;
