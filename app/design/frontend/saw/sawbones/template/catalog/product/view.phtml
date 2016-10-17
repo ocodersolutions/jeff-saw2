@@ -174,7 +174,7 @@
             </div>
         </div>
         <style type="text/css">
-        .relatedprodpic {height: 180px;}
+            .relatedprodpic {height: 180px;}
         </style>
         <div class="relatedproducts w-col w-col-6">
             <h2 class="h2 product-detail">Related Products</h2>
@@ -185,10 +185,10 @@
                 foreach ($RelProduct as $id) {
                 $Product = Mage::getModel('catalog/product')->load($id);?>
                     <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="relatedprodpic"></div>
+                        <a href="<?php echo $Product->getProductUrl(); ?>"><div class="relatedprodpic"></div></a>
                         <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle"><?php echo $Product->getName(); ?></h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
+                            <a href="<?php echo $Product->getProductUrl(); ?>"> <h4 class="relatedprodtitle"><?php echo $Product->getName(); ?></h4> </a>
+                            <div class="detailslink related-proddetails"><a href="<?php echo $Product->getProductUrl(); ?>"> View Details<span class="fa view-details"></span></a>
                             </div>
                         </div>
                     </div>
