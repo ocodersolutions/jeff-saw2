@@ -242,7 +242,6 @@ a.skip-cart {
   overflow: hidden;
 }
 .breadcrumbs a {
-    color: hsla(0, 0%, 100%, .75) !important;
     font-size: 12px;
     float: left;
     

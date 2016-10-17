@@ -1156,7 +1156,6 @@ a.button:hover {
 
 .breadcrumbs a {
   float: left;
-  color: #636363;
 }
 
 .breadcrumbs a:hover {
@@ -1167,7 +1166,11 @@ a.button:hover {
   color: #636363;
   font-weight: normal;
 }
-
+.breadcrumbs .breadnotcurrentlisting span{
+  float: left;
+  color: #3399cc;
+  margin: 0px 3px;
+}
 .breadcrumbs span {
   /*float: left;
   padding: 0 7px;*/
