@@ -46,9 +46,16 @@
 
             <div class="itemdetailcol1 w-col w-col-6 w-col-stack">
                     <div class="bluetitlebg" style="z-index: 9;">
-                        <div class="bread-crumbs">Home&nbsp;/&nbsp;Orthopaedic Models&nbsp; / Pelvis-Full / <span class="breadcurrent">Full Female Pelvis</span>
-                        </div>
-                        <h2 class="h2 itemtitle">Full Female Pelvis</h2>
+                        <style type="text/css">
+                        .breadcrumbs{
+                            color: hsla(0, 0%, 100%, .75); top: 0px;margin-left: 0px;
+                        }
+                        .breadcrumbs strong{
+                            font-weight: bold; color: white;
+                        }
+                        </style>
+                            <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml(); ?>
+                        <h2 class="h2 itemtitle"><?php echo $_product->getName(); ?></h2>
                     </div>
                 <?php echo $this->getChildHtml('media') ?>
             </div>
@@ -173,54 +180,20 @@
             <h2 class="h2 product-detail">Related Products</h2>
             <div class="relatedproductslider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
                 <div class="w-slider-mask">
+                <?php $product_id = $this->getProduct()->getId();
+                $RelProduct = Mage::getModel('catalog/product')->load($product_id)->getRelatedProductIds();
+                foreach ($RelProduct as $id) {
+                $Product = Mage::getModel('catalog/product')->load($id);?>
                     <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
                         <div class="relatedprodpic"></div>
                         <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle">Full Male Pelvis</h4>
+                            <h4 class="relatedprodtitle"><?php echo $Product->getName(); ?></h4>
                             <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="relatedprodpic"></div>
-                        <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle">Full Male Pelvis</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="relatedprodpic"></div>
-                        <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle">Full Male Pelvis</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="relatedprodpic"></div>
-                        <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle">Full Male Pelvis</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="relatedprodpic"></div>
-                        <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle">Full Male Pelvis</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="relatedprodpic"></div>
-                        <div class="relatedproddetes">
-                            <h4 class="relatedprodtitle">Full Male Pelvis</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
+
+                <?php } ?>
                 </div>
                 <div class="w-slider-arrow-left">
                     <div class="prodslideicon w-icon-slider-left"></div>

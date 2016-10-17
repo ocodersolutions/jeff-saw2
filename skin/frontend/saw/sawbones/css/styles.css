@@ -7478,8 +7478,21 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 }
 
 .swatch-link {
-  border: 1px solid #cccccc;
   margin: 0 0 3px;
+}
+span.count{
+  display: none;
+}
+.itemdetailcol2 {
+  height: auto;
+  padding-bottom: 0px;
+}
+.product-image-thumbs .thumb-link img{
+  width: 58px;
+  height: 58px;
+}
+.section1proddetail .categorywrap dd{
+  margin-left: 0px;
 }
 .swatch-link img {
   border-radius: 2px;
