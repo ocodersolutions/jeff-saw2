@@ -4,7 +4,6 @@
         <reference name="head">
             <!--Adding JS Files Styles-->
              <action method="addItem"><type>skin_js</type><name>js/webflow.js</name><params/></action>
-             <action method="addItem"><type>skin_js</type><name>js/custom.js</name><params/></action>
              <!-- <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>js/jquery.carouFredSel-6.2.1-packed.js</name><params/></action>
             <action method="addItem"><type>skin_js</type><name>js/jquery.easing.1.3.js</name><params/></action>
