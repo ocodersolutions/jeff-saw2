@@ -49,7 +49,7 @@
 	display: none;
 }
 .product-options#product-options-wrapper{
-	display: none;
+	/*display: none;*/
 }
 .product-shop .product-options-bottom{
 	border: none;
@@ -69,6 +69,7 @@
 .product-options-bottom .add-to-cart .qty-wrapper {
     width: 30%;
     height: 50px;
+    float: left;
 }
 .product-options-bottom .add-to-cart input#qty{
 	display: inline-block;
@@ -94,15 +95,19 @@
     margin-top: 12px;
     margin-left: 18px;
     width: 65%;
+    float: right;
+    margin-bottom: -5px;
 }
 .add-to-cart-buttons button{
 	background-color: #537d96;
 	border-radius: 4px;
+	width: 100%;
+	height: 50px;
 }
 
 .add-to-cart-buttons button span{
     color: #fff;
-    line-height: 50px;
+    line-height: 40px;
     font-weight: 700;
     text-align: center;
 }

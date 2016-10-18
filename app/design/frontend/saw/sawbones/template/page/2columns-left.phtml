@@ -30,14 +30,8 @@
  */
 ?>
 
-<!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js"> <!--<![endif]-->
-
+<!DOCTYPE html> 
+<html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js">
 <head>
 <?php echo $this->getChildHtml('head') ?>
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic">
@@ -52,37 +46,9 @@
 </style>
 </head>
 <body class="body">
-    <div class="section-header">
-        <div class="navbar w-nav" data-animation="default" data-collapse="medium" data-contain="1" data-duration="400">
-            <div class="nav-container w-container">
-                <a class="brandwrap w-clearfix w-nav-brand" href="#"><img class="sawboneslogo" src="http://uploads.webflow.com/57994ac141136a134b02557d/57a600cec3e841c509ebf7a2_sawbones-logo-white.png" width="215">
-                </a>
-                <nav class="nav-menu w-nav-menu" role="navigation"><a class="active nav-link w-nav-link" href="#" style="max-width: 940px;">Products&nbsp;<span class="fa-blue"></span></a><a class="nav-link w-nav-link" href="#" style="max-width: 940px;">Materials &amp; Use Guide&nbsp;<span class="fa-blue"></span></a><a class="nav-link w-nav-link" href="#" style="max-width: 940px;">Custom Models&nbsp;<span class="fa-blue"></span></a>
-                </nav>
-                <div class="menubutton w-nav-button">
-                    <div class="icon w-icon-nav-menu"></div>
-                </div>
-            </div>
-            <div class="search">
-                <h3 class="searchicon"></h3>
-            </div>
-            <div class="w-nav-overlay" data-wf-ignore=""></div>
-        </div>
-    </div>
+    <?php echo $this->getChildHtml('header') ?>
     <div class="section1 section1proddetail">
-
     <?php echo $this->getChildHtml('breadcrumbs') ?>
-     
-
-        
-        <div class="cartcheckoutwrap w-clearfix">
-            <div class="checkoutwrap">
-                <h4 class="checktext">Checkout</h4>
-            </div>
-            <div class="cartwrap">
-                <h1 class="carttext">0<span class="fa checkout"></span></h1>
-            </div>
-        </div>
     <div class="w-row">
         <div class="w-col w-col-3">
             <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
@@ -95,6 +61,5 @@
         </div>
     </div>
 </div>
-<?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>

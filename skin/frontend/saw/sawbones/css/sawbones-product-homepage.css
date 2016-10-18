@@ -38,6 +38,7 @@
   z-index: 50;
   padding: 10px 50px;
   background-color: #272626;
+  padding-bottom: 18px;
 }
 
 .search {
@@ -628,7 +629,6 @@
   left: 0px;
   height: 194px;
   padding-right: 0px;
-  background-image: url("http://uploads.webflow.com/57994ac141136a134b02557d/57a65190e199bb9c46956941_1302-2a-large.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
