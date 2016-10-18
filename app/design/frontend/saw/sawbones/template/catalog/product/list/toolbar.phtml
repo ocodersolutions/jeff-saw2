@@ -36,21 +36,11 @@
          
         </div>
     <?php endif; ?>
-    <div class="pager">
+    <div class="pager filterbarcol2 w-clearfix w-col w-col-9 w-col-stack">
         <div class="count-container">
-            <?php if($this->getLastPageNum()>1): ?>
-                <p class="amount amount--has-pages">
-                    <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
-                </p>
-            <?php else: ?>
-                <p class="amount amount--no-pages">
-                    <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
-                </p>
-            <?php endif; ?>
-
             <div class="limiter">
-                <label><?php echo $this->__('Show') ?></label>
-                <select onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Results per page')); ?>">
+                <label><?php echo $this->__('Per Page') ?></label>
+                <select class="perpagedrop" onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Results per page')); ?>">
                 <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
                     <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
                         <?php echo $_limit ?>
@@ -58,6 +48,19 @@
                 <?php endforeach; ?>
                 </select>
             </div>
+            <div class="pagenumber perpagebox"><div class="pagenumlisting">1</div></div>
+            <div class="pagefloat sortby">of 7 <span class="fa prod-search"></span></div>
+            <?php if($this->getLastPageNum()>1): ?>
+                <p class="amount amount--has-pages">
+                    <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+                </p>
+            <?php else: ?>
+                <p class="amount amount--no-pages sortingbaritemnumbers">
+                    <strong><?php echo $this->__('%s items', $this->getTotalNum()) ?></strong>
+                </p>
+            <?php endif; ?>
+
+            
         </div>
 
         <?php echo $this->getPagerHtml() ?>

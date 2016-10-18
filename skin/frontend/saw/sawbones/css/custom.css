@@ -32,6 +32,16 @@ li.level-top a:hover{
   height: 50px;
 }
 @media (min-width: 768px){
+  /*sub menu*/
+  input#search{
+    border: none;
+    height: 34px;
+    border-radius: 4px;
+  }
+  #search_mini_form .input-box button.search-button{
+    width: 34px;
+    height: 34px
+  }
   a.nav-link:hover,a.nav-link:focus,a.nav-link:active{
   text-decoration: none;
   color: #fff;
@@ -356,4 +366,52 @@ button#product-addtocart-button{
 }
 ul.sharing-links{
   display: none;
+}
+/** style categpry page**/
+.categorywrap .categoryblock h4.farrow:before{
+  content: "\f105";
+  font-family: Fontawesome,sans-serif;
+}
+.filterbar .sorter{
+  display: none;
+}
+.pager.filterbarcol2 .count-container {
+    width: 100%;
+}
+.filterbar .filterbarcol1 .sortby{
+  float: left;
+  line-height: 30px;
+}
+.filterbar .filterbarcol1 select.sortbydrop{
+  float: left;
+  padding-left: 5px;
+  border: none;
+}
+.pager.filterbarcol2 .count-container .limiter{
+  width: 26%;
+}
+.pager.filterbarcol2 .count-container .limiter label{
+  color: #fff;
+}
+.pager.filterbarcol2 .count-container .limiter select.perpagedrop{
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    border: none;
+    width: calc(100% - 70px);
+    padding-left: 10px;
+    background-color: #fff;
+}
+.pagenumber.perpagebox,.pagefloat.sortby{
+  float: left;
+}
+.pager .count-container p.amount{
+  float: right;
+}
+.categorywrap .categoryblock a.skip-link{
+  display: block;
+  width: 100%;
+}
+.categorywrap .categoryblock a.skip-link h4{
+  float: left;
 }

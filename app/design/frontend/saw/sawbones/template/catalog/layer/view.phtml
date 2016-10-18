@@ -12,13 +12,13 @@
                 <?php $_filters = $this->getFilters() ?>
                 <?php foreach ($_filters as $_filter): ?>
                 <?php if($_filter->getItemsCount()): ?>
-                    <div class="categoryblock w-clearfix"><h4 class="categoryblocktext"><?php echo $this->__($_filter->getName()) ?></h4><h4 class="categoryblocktext farrow"></h4></div>
+                    <div class="categoryblock w-clearfix" data-name="<?php echo $this->__($_filter->getName()) ?>"><a class="skip-link" data-target-element="#<?php echo $this->__($_filter->getName()) ?>"><h4 class="categoryblocktext"><?php echo $this->__($_filter->getName()) ?></h4><h4 class="categoryblocktext farrow"></h4></a></div>
 
-                    <dd style="display: block;"><?php echo $_filter->getHtml() ?></dd>
+                    <dd id="<?php echo $this->__($_filter->getName()) ?>" class="skip-content"  ><?php echo $_filter->getHtml() ?></dd>
                 <?php endif; ?>
                 <?php endforeach; ?>
             <script type="text/javascript">decorateDataList('narrow-by-list')</script>
-        <?php endif; ?>
+       <?php endif; ?>
     </div>
 <?php endif; ?>
 
