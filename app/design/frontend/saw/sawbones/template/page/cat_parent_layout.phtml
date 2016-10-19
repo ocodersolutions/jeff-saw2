@@ -44,15 +44,18 @@
             echo $_category_detail->getName();?></h2>
                 <p class="categorypagedesc"><?php echo Mage::getModel('catalog/layer')->getCurrentCategory()->getDescription();  ?>
                 </p>
-                <div class="categorypageslider smallslider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
-                    
-                <div class="w-clearfix w-slider-mask">
                 <?php $parentCategoryId =  Mage::registry('current_category')->getId();
                 $cat = Mage::getModel('catalog/category')->load($parentCategoryId);
                 $subcats = $cat->getChildren();
-
-                foreach(explode(',',$subcats) as $subCatid){ 
+                $subcatsleng = strlen($subcats) ;
+                if($subcatsleng >0){ ?>
+                    <div class="categorypageslider smallslider w-slider" data-animation="slide" data-duration="500" data-infinite="1">
+                <div class="w-clearfix w-slider-mask">
+                <?php 
+                
+                    foreach(explode(',',$subcats) as $subCatid){ 
                     $_category = Mage::getModel('catalog/category')->load($subCatid);
+                   
                 if($_category->getIsActive()) { ?>
                     <div class="categorypageslide w-slide" style="transform: translateX(0px); opacity: 1;">
                         <a href="<?php echo $_category->getURL(); ?>"><div class="categorypageslidepic"></div></a>
@@ -70,6 +73,11 @@
                         <div class="prodslideicon w-icon-slider-right"></div>
                     </div>
                 </div>
+                <?php }
+                ?>
+                
+                    
+                
             </div>
         </div>
     </div>

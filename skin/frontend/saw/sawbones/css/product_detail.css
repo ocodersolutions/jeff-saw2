@@ -1,3 +1,10 @@
+/* category page*/
+.categorypageslider .w-clearfix.w-slider-mask .categorypageslide{
+	float: none;
+}
+.categorypageslidetitle a:hover{
+	text-decoration: none;
+}
 .product-image{
 	float: left;
     width: 79%;
