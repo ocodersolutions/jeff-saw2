@@ -15,7 +15,7 @@
                         $_sub2categories = $_category->getChildrenCategories();
                         if (count($_subcategories) > 0){?>
                             <li class="nav-link w-nav-link">
-                                <a class="nav-link" href="<?php echo $_category->getUrl();?>" ><?php echo $_category->getName();?></a><span class="fa-blue"></span>
+                                <a class="nav-link" href="<?php echo $_category->getUrl();?>" ><?php echo $_category->getName();?></a><span class="fa-blue"></span>
                                <?php  if (count($_sub2categories) > 0){?>
                                  <ul class="sub-menu">
                                 <?php foreach($_sub2categories as $_subcategory){
