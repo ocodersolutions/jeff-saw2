@@ -6,11 +6,14 @@
             </a>
             <nav class="nav-menu w-nav-menu" role="navigation">
             <?php 
-                $_helper = Mage::helper('catalog/category');
-                $_categories = $_helper->getStoreCategories();
+            $RootCategoryId=Mage::app()->getStore()->getRootCategoryId();
+            $_category = Mage::getModel('catalog/category')->load($RootCategoryId);
+            $_categories = $_category->getCategories();
+                // $_helper = Mage::helper('catalog/category');
+                // $_categories = $_helper->getStoreCategories();
                 if (count($_categories) > 0){
-                    foreach($_categories as $_category){
-                        $_category = Mage::getModel('catalog/category')->load($_category->getId());
+                    //foreach($_categories as $_category){
+                        //$_category = Mage::getModel('catalog/category')->load($_category->getId());
                         $_subcategories = $_category->getCategories();
                         $_sub2categories = $_category->getChildrenCategories();
                         if (count($_subcategories) > 0){?>
@@ -43,7 +46,7 @@
                                }?>
                             </li>
                             <?php
-                        }
+                       // }
                     }
                 }
                 ?>
