@@ -447,9 +447,9 @@ a.skip-cart {
   font-weight: 700;
 }
 
-.itemdetailcol1{
-  overflow: hidden;
-}
+// .itemdetailcol1{
+//   overflow: hidden;
+// }
 .breadcrumbs a {
     font-size: 12px;
     float: left;
