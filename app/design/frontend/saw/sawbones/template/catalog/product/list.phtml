@@ -21,16 +21,18 @@ if($this->getMode()!='grid'):
                 <div class="addtocartwrap listing">
                     <?php if(!$_product->canConfigure() && $_product->isSaleable()){ ?>
                     <div class="quantitytext">Quantity:</div>
-                    <div class="quantityform">
-                        <div class="quantitynumber">
-                            <?php if(!$_product->isGrouped()): ?>
-                            <input style="width: 100%; border: none;" type="text" name="qty" id="qty" placeholder="1" maxlength="12" value="<?php echo $_product->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty input-quantity" />
-                            <?php endif; ?>
+                    <div class="addtocart_box">
+                        <div class="quantityform">
+                            <div class="quantitynumber">
+                                <?php if(!$_product->isGrouped()): ?>
+                                <input style="width: 100%; border: none;" type="text" name="qty" id="qty" placeholder="1" maxlength="12" value="<?php echo $_product->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty input-quantity" />
+                                <?php endif; ?>
+                            </div>
                         </div>
-                    </div>
-                    <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
-                    <div class="addtocartbutton" style="margin-left: 12px; cursor: pointer" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
-                        <div class="addtocarttext">Add to Cart</div>
+                        <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+                        <div class="addtocartbutton" style="margin-left: 12px; cursor: pointer" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+                            <div class="addtocarttext">Add to Cart</div>
+                        </div>
                     </div>
                     <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                     <a style="color: white;" title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" href="<?php echo $_product->getProductUrl() ?>">

@@ -142,6 +142,9 @@ li.level-top a:hover{
   }
 }
 @media (min-width: 992px) and (max-width:1200px){
+  .section1.section1proddetail{
+    padding-top: 90px;
+  }
   .nav-container .w-nav-brand{
     float: none;
   }
@@ -150,6 +153,9 @@ li.level-top a:hover{
     text-align: center;
     width: 100%;
     left: 0;
+  }
+  .pager.filterbarcol2 .count-container .limiter{
+    width: 26%;
   }
 }
 @media (max-width: 991px){
@@ -255,6 +261,14 @@ li.level-top a:hover{
   .skip-link:not(.skip-active):hover {
     opacity: 1;
   }
+  .listingcol1{
+    max-height: 400px;
+    overflow: hidden;
+  }
+  .listingcol1 img{
+    width: 100%;
+    height: auto !important;
+  }
 }
 @media (max-width: 767px){
   .nav-menu{
@@ -347,7 +361,9 @@ li.level-top a:hover{
   .h2{
     min-width: 100%;
   }
-
+  .pager.filterbarcol2 .count-container .limiter{
+    width: 30%;
+  }
 }
 @media (max-width: 479px){
   .navbar .search {
@@ -358,7 +374,15 @@ li.level-top a:hover{
     height: 34px;
     top: -4px;
   }
-  .nav-menu{}
+  .pager.filterbarcol2 .count-container .limiter{
+    width: 45%;
+  }
+  .count-container .limiter label {
+    display: inline-block;
+  }
+  .count-container .pages{
+    margin-left: 0;
+  }
 }
 /* cart */
 .header-minicart {
@@ -585,10 +609,9 @@ ul.sharing-links{
   float: left;
   padding-left: 5px;
   border: none;
+  width: calc(100% - 70px);
 }
-.pager.filterbarcol2 .count-container .limiter{
-  width: 26%;
-}
+
 .pager.filterbarcol2 .count-container .limiter label{
   color: #fff;
 }
@@ -613,4 +636,41 @@ ul.sharing-links{
 }
 .categorywrap .categoryblock a.skip-link h4{
   float: left;
+}
+.addtocart_box {
+    width: 100%;
+}
+.addtocart_box .quantityform{
+   margin-top: 0;
+}
+.addtocart_box .quantityform input[type=text].qty{
+  height: 100%;
+}
+.addtomylists a{
+  color: #537d96;
+}
+.addtomylists a:hover{
+  text-decoration: none;
+  color: #1691db;
+}
+.addtocart_box .addtocartbutton {
+    display: inline-block;
+    width: calc(70% - 18px);
+    height: 50px;
+    border-radius: 4px;
+    background-color: #537d96;
+}
+.count-container .pages{
+  float: left;
+}
+.count-container .pages ol li a{
+  display: none;
+}
+.count-container .pages ol li a.current,
+.count-container .pages ol li a.previous,
+.count-container .pages ol li a.next{
+  display: block;
+}
+.pages ol{
+  padding-left: 0;
 }

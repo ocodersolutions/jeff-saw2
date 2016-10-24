@@ -1,6 +1,8 @@
-
-
 <?php if($this->getCollection()->getSize()): ?>
+    <?php $_currUrl=($this->getCurrentPage()==1)?
+    $this->getPagerUrl(array($this->getOrderVarName()=>$order,  $this->getDirectionVarName()=>$direction,$this->getPageVarName()=>null )):
+    $this->getPagerUrl(array($this->getOrderVarName()=>$order,  $this->getDirectionVarName()=>$direction,$this->getPageVarName()=>null ));
+    ?>
 <div class="filterbar w-row">
 
     <?php if( $this->isExpanded() ): ?>
@@ -48,22 +50,20 @@
                 <?php endforeach; ?>
                 </select>
             </div>
-            <div class="pagenumber perpagebox"><div class="pagenumlisting">1</div></div>
-            <div class="pagefloat sortby">of 7 <span class="fa prod-search"></span></div>
-            <?php if($this->getLastPageNum()>1): ?>
-                <p class="amount amount--has-pages">
-                    <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
-                </p>
-            <?php else: ?>
-                <p class="amount amount--no-pages sortingbaritemnumbers">
-                    <strong><?php echo $this->__('%s items', $this->getTotalNum()) ?></strong>
-                </p>
-            <?php endif; ?>
+           
+            <!-- <div class="pagenumber perpagebox"><div class="pagenumlisting"><?php echo $this->getCurrentPage()?></div></div>
+            <div class="pagefloat sortby"> of <?php echo $this->getLastPageNum()?> <a href="<?php echo $_currUrl.'?p=2';?>"></a></div> -->
+            <?php echo $this->getPagerHtml() ?>
+            <div class="pagefloat sortby"> of <?php echo $this->getLastPageNum()?></div>
+            <p class="amount amount--no-pages sortingbaritemnumbers">
+                <strong><?php echo $this->__('%s items', $this->getTotalNum()) ?></strong>
+            </p>
+
 
             
         </div>
 
-        <?php echo $this->getPagerHtml() ?>
+        
 
     </div>
 </div>
