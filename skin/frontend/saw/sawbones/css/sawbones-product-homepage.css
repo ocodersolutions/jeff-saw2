@@ -1463,3 +1463,28 @@
   font-weight: 400;
   font-style: normal;
 }
+#header-account{
+    position: absolute;
+    background: #333;
+    width: 155px;
+    right: 0px;
+    margin-right: 220px;
+    display: none;
+    border: solid 1px #cccccc;
+}
+#header-account ul{
+    padding-left: 0px;
+}
+#header-account ul li a{
+    color: white;
+    text-align: left;
+    font-size: 22px;
+}
+#header-account ul li a:hover {
+    color: white;
+    text-decoration: blink;
+}
+#btn-account{
+    color: white;
+    margin-left: -75px;
+}
