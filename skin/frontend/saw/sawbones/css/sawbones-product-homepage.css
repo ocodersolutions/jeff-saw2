@@ -1466,19 +1466,20 @@
 #header-account{
     position: absolute;
     background: #333;
-    width: 155px;
+    width: 200px;
     right: 0px;
     margin-right: 220px;
     display: none;
     border: solid 1px #cccccc;
 }
 #header-account ul{
-    padding-left: 0px;
+    padding-left: 20px;
 }
 #header-account ul li a{
     color: white;
     text-align: left;
     font-size: 22px;
+    line-height: 30px;
 }
 #header-account ul li a:hover {
     color: white;
@@ -1486,5 +1487,5 @@
 }
 #btn-account{
     color: white;
-    margin-left: -75px;
+    margin-left: -100px;
 }
