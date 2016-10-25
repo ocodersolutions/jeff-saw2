@@ -873,7 +873,6 @@
 
 .news-overflow-scroll {
   display: block;
-  overflow: scroll;
   max-width: 500px;
   margin-right: auto;
   margin-left: auto;
