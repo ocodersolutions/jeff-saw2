@@ -55,23 +55,24 @@
                 <li class="nav-link w-nav-link">
                     <a  href="#" style="max-width: 940px;">Materials &amp; Use Guide&nbsp;</a><span class="fa-blue"></span>
                 </li>
-                <li class="nav-link w-nav-link">
-                    <a  href="#" style="max-width: 940px;">Custom Models&nbsp;</a><span class="fa-blue"></span>
+                <li class="nav-link w-nav-link btn-account-mobile">
+                    <a  href="#" style="max-width: 940px;">My Account</a><span class="fa-blue"></span>
+                    <ul class="sub-menu"><?php echo $this->getChildHtml('topLinks') ?></ul>
                 </li>
-                
             </nav>
             <div class="menubutton w-nav-button">
                 <div class="icon w-icon-nav-menu"></div>
             </div>
         </div>
-        <div id="btn-account" class="nav-link w-nav-link">My Account</div>
-        <div id="header-account">
-            <?php echo $this->getChildHtml('topLinks') ?>
-        </div>
-
-
         <div class="search">
              <?php echo $this->getChildHtml('topSearch') ?>
+                   <li id="btn-account" class="nav-link w-nav-link">
+                <img id="user" class="icon" src="/skin/frontend/saw/sawbones/images/user.svg" alt="User pictogram">
+                <div id="header-account">
+                    <?php echo $this->getChildHtml('topLinks') ?>
+                </div>
+            </li>
+
         </div>
 
         <div class="w-nav-overlay"></div>

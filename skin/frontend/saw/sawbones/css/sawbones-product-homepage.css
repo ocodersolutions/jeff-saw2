@@ -41,16 +41,14 @@
   padding-bottom: 18px;
 }
 
+.btn-account-mobile{
+	display: none;
+}
 .search {
   position: absolute;
   top: 15px;
   right: 0px;
-  width: 200px;
-  height: 34px;
-  border-radius: 4px;
-  background-color: #fff;
 }
-
 .nav-container {
   float: left;
 }
@@ -408,7 +406,6 @@
   height: 150px;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 15px;
   border-radius: 4px;
   background-color: #f2f2f2;
 }
@@ -944,8 +941,26 @@
   color: hsla(0, 0%, 100%, .75);
   font-size: 12px;
 }
-
+#header-account{
+    position: absolute;
+    background: #333;
+    width: 200px;
+    right: 0px;
+    margin-right: 255px;
+    display: none;
+    border: solid 1px #cccccc;
+}
+#header-account{
+	margin-right: -80px;
+	margin-top: 5px;
+}
 @media (max-width: 991px) {
+	#btn-account{
+		display: none;
+	}
+	.btn-account-mobile{
+		display: block;
+	}
   .section-header {
     padding-right: 0px;
     padding-left: 0px;
@@ -1137,6 +1152,12 @@
 }
 
 @media (max-width: 767px) {
+	#btn-account{
+		display: none;
+	}
+	.btn-account-mobile{
+		display: block;
+	}
   .section-header {
     height: 114px;
     padding-right: 0px;
@@ -1258,6 +1279,13 @@
 }
 
 @media (max-width: 479px) {
+
+	.btn-account-mobile{
+		display: block;
+	}
+	#btn-account{
+		display: none;
+	}
   .section-header {
     padding-right: 0px;
     padding-left: 0px;
@@ -1463,15 +1491,6 @@
   font-weight: 400;
   font-style: normal;
 }
-#header-account{
-    position: absolute;
-    background: #333;
-    width: 200px;
-    right: 0px;
-    margin-right: 220px;
-    display: none;
-    border: solid 1px #cccccc;
-}
 #header-account ul{
     padding-left: 20px;
 }
@@ -1487,5 +1506,7 @@
 }
 #btn-account{
     color: white;
-    margin-left: -100px;
+    position: relative;
+    margin-left: -60px;
+    margin-top: -45px;
 }

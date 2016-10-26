@@ -88,8 +88,13 @@ span.swatch-link {
 	max-height: 500px;
 	overflow: scroll;
 }
-	::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 0px;
+}
+#user{
+	width: 20px;
+	height: 20px;
+	background: white;
 }
 .more-views .product-image-thumbs li{
 	display: block;
@@ -248,7 +253,7 @@ span.swatch-link {
 	}
 	.more-views{
 		display: block;
-	    width: 276px;
+	    width: 100%;
 	    height: auto;
 	    min-height: 0;
 	    margin: 4px auto 10px;
@@ -257,7 +262,8 @@ span.swatch-link {
 	.more-views .product-image-thumbs{
 		width: 100%;
 		text-align: center;
-	}
+		white-space: nowrap;
+	}	
 	.more-views .product-image-thumbs li{
 	    display: inline-block;
 	    margin-top: 10px;
