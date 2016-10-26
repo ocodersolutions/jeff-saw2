@@ -45,6 +45,10 @@ li.level-top a:hover{
     height: 34px;
     border-radius: 6px;
   }
+  .main .col-main{
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 @media (min-width: 992px){
   .nav-menu.w-nav-menu >li >.fa-blue:before{
     content: "\f0d7";
@@ -140,6 +144,12 @@ li.level-top a:hover{
     color: #fff;
     text-decoration: none;
   }
+  .count-container .limiter{
+    width: 26%;
+  }
+  .col-main .account-login{
+    margin-top: 100px;
+  }
 }
 @media (min-width: 992px) and (max-width:1200px){
   .section1.section1proddetail{
@@ -156,6 +166,9 @@ li.level-top a:hover{
   }
   .pager.filterbarcol2 .count-container .limiter{
     width: 26%;
+  }
+  .col-main .account-login{
+    margin-top: 157px;
   }
 }
 @media (max-width: 991px){
@@ -269,6 +282,12 @@ li.level-top a:hover{
     width: 100%;
     height: auto !important;
   }
+  .count-container .limiter{
+    width: 30%;
+  }
+  .col-main .account-login{
+    margin-top: 100px;
+  }
 }
 @media (max-width: 767px){
   .nav-menu{
@@ -364,8 +383,14 @@ li.level-top a:hover{
   .pager.filterbarcol2 .count-container .limiter{
     width: 30%;
   }
+  .col-main .account-login{
+    margin-top: 133px;
+  }
 }
 @media (max-width: 479px){
+  .wrapper{
+    min-width: 100% !important;
+  }
   .navbar .search {
     top: 1px;
   }
@@ -382,6 +407,12 @@ li.level-top a:hover{
   }
   .count-container .pages{
     margin-left: 0;
+  }
+  .col-main .account-login{
+    margin-top: 180px;
+  }
+  .content.fieldset ul.form-list{
+    padding-left: 0;
   }
 }
 /* cart */
