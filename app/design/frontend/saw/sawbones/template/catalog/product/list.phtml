@@ -8,6 +8,7 @@ if($this->getMode()!='grid'):
 <div class="listing-wrap">
     <?php foreach ($_productCollection as $_product): ?>
     <div class="listingrow w-row">
+
         <div class="listingcol1 w-col w-col-2 w-col-stack">
             <?php $_imgSize=300; ?>
             <a style="color: black;" href="<?php echo $_product->getProductUrl() ?>"?><img style="height: 194px;" id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
@@ -66,12 +67,72 @@ if($this->getMode()!='grid'):
                 </div>
             </div>
         </div>
+
+
+
         <div class="listingcol3 w-col w-col-5 w-col-stack">
-            <div class="height itemdetinfotext listinginfo">Model Type:&nbsp;Normal
-                <br>AnatomyMaterial:&nbsp;Solid White Plastic
-                <br>Size:&nbsp;Medium
-                <br>Color:&nbsp;White
-                <br>Orientation:&nbsp;N/A
+            <div class="height itemdetinfotext listinginfo">Model Type:&nbsp;...
+                <br>AnatomyMaterial:&nbsp;.....
+                <br>Size:&nbsp;<?php //size
+            if($_product->isConfigurable()) {
+                $_helper2 = Mage::getModel('catalog/product_type_configurable')
+                            ->setProduct($_product);
+                $_subproducts = $_helper2
+                                ->getUsedProductCollection()
+                                ->addAttributeToSelect('size')
+                                ->addFilterByRequiredOptions(); 
+
+                $_colors = array();
+                $_color_id = array();
+                foreach ($_subproducts as $_subproduct) {
+                  $label = $_subproduct->getAttributeText('size');
+                  $_colors[] = $label;
+
+                  if (!isset($_color_id[$label])) {
+                    $_color_id[$label] = $_subproduct->getData('size');
+                  }
+                }
+                $_color_swatch = array_unique($_colors);
+                $len = count($array);
+                foreach($_color_swatch as $_inner_option_id){
+                            echo  " /".$_inner_option_id;
+                }
+
+            }
+
+            ?>
+
+
+
+                <br>Color:&nbsp; <?php // color
+            if($_product->isConfigurable()) {
+                $_helper2 = Mage::getModel('catalog/product_type_configurable')
+                            ->setProduct($_product);
+                $_subproducts = $_helper2
+                                ->getUsedProductCollection()
+                                ->addAttributeToSelect('color')
+                                ->addFilterByRequiredOptions(); 
+
+                $_colors = array();
+                $_color_id = array();
+                foreach ($_subproducts as $_subproduct) {
+                  $label = $_subproduct->getAttributeText('color');
+                  $_colors[] = $label;
+
+                  if (!isset($_color_id[$label])) {
+                    $_color_id[$label] = $_subproduct->getData('color');
+                  }
+                }
+                $_color_swatch = array_unique($_colors);
+                $len = count($array);
+                foreach($_color_swatch as $_inner_option_id){
+                            echo  " /".$_inner_option_id;
+                }
+
+            }
+
+            ?>
+                <br>Orientation:&nbsp;...
                 <br>
                 <br><span class="itemdetailtextsmall">
             <?php echo substr($_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description'),0,110); ?>

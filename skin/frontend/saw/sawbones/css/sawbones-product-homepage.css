@@ -873,7 +873,6 @@
 
 .news-overflow-scroll {
   display: block;
-  overflow: scroll;
   max-width: 500px;
   margin-right: auto;
   margin-left: auto;
@@ -1463,4 +1462,30 @@
   src: url('https://daks2k3a4ib2z.cloudfront.net/57994ac141136a134b02557d/57a53284c3e841c509eb771b_FontAwesome.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+}
+#header-account{
+    position: absolute;
+    background: #333;
+    width: 200px;
+    right: 0px;
+    margin-right: 220px;
+    display: none;
+    border: solid 1px #cccccc;
+}
+#header-account ul{
+    padding-left: 20px;
+}
+#header-account ul li a{
+    color: white;
+    text-align: left;
+    font-size: 22px;
+    line-height: 30px;
+}
+#header-account ul li a:hover {
+    color: white;
+    text-decoration: blink;
+}
+#btn-account{
+    color: white;
+    margin-left: -100px;
 }
