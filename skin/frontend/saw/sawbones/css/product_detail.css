@@ -85,12 +85,11 @@ span.swatch-link {
 	padding-left: 0;
 	width: 79%;
 	margin: 0 auto;
+	max-height: 500px;
+	overflow: scroll;
 }
-.more-views ul.product-image-thumbs li{
-	display: none;
-}
-.more-views ul.product-image-thumbs li:nth-child(-n+5){
-	display: block;
+	::-webkit-scrollbar {
+    width: 0px;
 }
 .more-views .product-image-thumbs li{
 	display: block;
