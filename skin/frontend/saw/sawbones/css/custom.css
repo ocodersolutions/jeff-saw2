@@ -590,7 +590,7 @@ button#product-addtocart-button{
 .add-to-links li a.link-wishlist{
   position: relative;
   display: block;
-  width: 150px;
+  width: 100%;
   margin-top: 8px;
   margin-right: auto;
   margin-left: auto;

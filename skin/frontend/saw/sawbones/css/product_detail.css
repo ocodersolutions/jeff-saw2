@@ -235,10 +235,8 @@ span.swatch-link {
 	float: left;
 }
 .h2{
-	 white-space: nowrap;
 	overflow: hidden;
   	text-overflow: ellipsis;
-  	max-width: 200px;
 }	
 @media (min-width:767px){
 	.add-to-cart-buttons{

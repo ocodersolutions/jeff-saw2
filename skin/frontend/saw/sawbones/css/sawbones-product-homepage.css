@@ -132,7 +132,7 @@
 }
 
 .h2 {
-  min-width: 500px;
+  
   color: #fff;
   font-size: 34px;
   font-weight: 300;
@@ -428,7 +428,7 @@
 
 .addtocartbutton {
   display: inline-block;
-  width: 65%;
+  width: 60%;
   height: 50px;
   margin-left: 18px;
   border-radius: 4px;
@@ -955,6 +955,13 @@
 	margin-top: 5px;
 }
 @media (max-width: 991px) {
+	.product-view .product-shop{
+		width: 100%!important;
+
+	}
+	.zoomContainer{
+		display: none;
+	}
 	#btn-account{
 		display: none;
 	}

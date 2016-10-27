@@ -5051,9 +5051,21 @@ p.product-name a:hover {
 .product-view .old-price .price-label {
   display: none;
 }
+.product-view .add-to-cart-wrapper{
+  background: #f4f4f4;
+  padding: 15px 20px;
+}
+.add-to-cart label{
+  width: 100%;
+}
+.add-to-cart .qty-wrapper{
+    width: 30%;
+    height: 50px;
+    float: left;
+}
 .product-view .add-to-cart-wrapper,
 .product-view .block-related {
-  width: 50%;
+  width: 100%;
   float: right;
   clear: right;
 }
@@ -5198,7 +5210,6 @@ p.product-name a:hover {
 .product-view .add-to-cart {
   padding-bottom: 3px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #cccccc;
 }
 .product-view .add-to-cart .qty-wrapper,
 .product-view .product-options-bottom .price-box,
@@ -5221,12 +5232,13 @@ p.product-name a:hover {
 }
 .product-view .add-to-cart .qty-wrapper .qty {
   float: left;
-  height: 40px;
+  height: 50px;
+  width: 100%;
 }
 .product-view .add-to-cart-buttons {
-  float: left;
+  float: right;
   margin-right: 10px;
-  max-width: 100%;
+  width: 65%;
 }
 .product-view .add-to-cart-buttons .paypal-logo {
   clear: left;
@@ -5282,6 +5294,7 @@ p.product-name a:hover {
     margin-right: 0;
     margin-left: 0;
     float: none;
+    font-size: 13px;
   }
 }
 /* This is the "or" that separates the "Add to Cart" and "Add to X" links */
@@ -5290,18 +5303,45 @@ p.product-name a:hover {
 }
 
 .product-view .add-to-links {
+  margin: 7px 0;
+  width: 65%;
+  float: right;
+  padding-left: 0px;
   clear: both;
   margin-top: 0px;
   margin-right: 15px;
-  float: left;
 }
 .product-view .add-to-links:after {
   content: '';
   display: table;
   clear: both;
 }
+.product-shop ul{
+  padding-left: 0px;
+}
+.bluetitlebg .breadcrumbs strong{
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 20px;
+  line-height: 1.8em;
+}
+.bluetitlebg .h2.itemtitle{
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 35px;
+}
+.block.block-related.left{
+  width: 50%;
+}
+.block.block-related.right{
+  width: 50%;
+}
 .product-view .add-to-links li {
-  float: left;
+  
 }
 .product-view .add-to-links a {
   padding: 2px 7px 2px 0px;
@@ -5549,7 +5589,17 @@ p.product-name a:hover {
     float: none;
     padding-right: 0;
     padding-left: 0;
+    padding-right: 11%;
   }
+  .product-view .add-to-cart-buttons{
+    width: 60%;
+    font-size: 13px;
+  }
+  .block.block-related.left{
+    width: 100%;
+    margin-top: 275px;
+  }
+  
 }
 @media only screen and (min-width: 771px) {
   .product-view .product-shop .product-name {
@@ -5567,6 +5617,9 @@ p.product-name a:hover {
   .product-view .block-related,
   .box-collateral {
     margin-bottom: 15px;
+  }
+  .product-view .product-shop{    
+    padding-left: 0px!important;
   }
 }
 .product-view .ratings .rating-links {
