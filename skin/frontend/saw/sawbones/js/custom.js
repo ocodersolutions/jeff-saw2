@@ -4,7 +4,7 @@ document.observe("dom:loaded", function() {
   	$j(this).closest('li').parent()
   	$j(this).closest('li').toggleClass('open-sub');
   });
-	$j('#btn-account ,#header-account').hover(
+	$j('#btn-account ,#user ,#header-account').hover(
   		function() {
   			$j('#header-account').css('display','block');
   		}, function() {
