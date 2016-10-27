@@ -211,6 +211,11 @@ span.swatch-link {
 }
 .relatedprodtitle{
 	min-height: 44px;
+	display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 72px;
 }
 .relatedprodtitle a:hover{
 	text-decoration: none;
