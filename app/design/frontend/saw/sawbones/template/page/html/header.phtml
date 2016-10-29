@@ -52,13 +52,6 @@
                 }
                 ?>
                
-                <li class="nav-link w-nav-link">
-                    <a  href="#" style="max-width: 940px;">Materials &amp; Use Guide&nbsp;</a><span class="fa-blue"></span>
-                </li>
-                <li class="nav-link w-nav-link btn-account-mobile">
-                    <a  href="#" style="max-width: 940px;">My Account</a><span class="fa-blue"></span>
-                    <ul class="sub-menu"><?php echo $this->getChildHtml('topLinks') ?></ul>
-                </li>
             </nav>
             <div class="menubutton w-nav-button">
                 <div class="icon w-icon-nav-menu"></div>
@@ -66,15 +59,16 @@
         </div>
         <div class="search">
              <?php echo $this->getChildHtml('topSearch') ?>
-                   <li id="btn-account" class="nav-link w-nav-link">
-                <img id="user" class="icon" src="/skin/frontend/saw/sawbones/images/user.svg" alt="User pictogram">
-                <div id="header-account">
-                    <?php echo $this->getChildHtml('topLinks') ?>
-                </div>
+            <li id="btn-account" class="nav-link w-nav-link">
+                    <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+                        <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
+                    <?php 
+                else: ?>
+                        <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Sign In</a>
+                    <?php 
+                endif; ?>
             </li>
-
         </div>
-
         <div class="w-nav-overlay"></div>
     </div>
     <div class="cartcheckoutwrap w-clearfix">

@@ -1,8 +1,19 @@
+.cart.display-single-price{
+  margin-top: 60px;
+}
+.checkout-types.top button.btn-proceed-checkout.btn-checkout{
+  display: none;
+}
+.main-container{
+  margin-top: 77px!important;
+}
 .page .section-header{
   z-index: 9999;
 }
 /* navbar*/
-
+.main-container.col2-right-layout{
+  margin-top: 150px;
+}
 .main-container.col2-left-layout{
   padding-top: 0;
 }
@@ -147,31 +158,37 @@ li.level-top a:hover{
   .count-container .limiter{
     width: 26%;
   }
-  .col-main .account-login{
-    margin-top: 100px;
-  }
 }
 @media (min-width: 992px) and (max-width:1200px){
+  .main-container{
+    margin-top: 84px!important;
+  }
   .section1.section1proddetail{
     padding-top: 90px;
   }
   .nav-container .w-nav-brand{
-    float: none;
+    
   }
   nav.nav-menu.w-nav-menu{
     position: relative;
     text-align: center;
-    width: 100%;
+    width: 70%;
     left: 0;
+  }
+  .nav-link.w-nav-link{
+    float: left;
   }
   .pager.filterbarcol2 .count-container .limiter{
     width: 26%;
   }
-  .col-main .account-login{
-    margin-top: 157px;
-  }
 }
 @media (max-width: 991px){
+.main-container{
+  margin-top: 83px!important;
+}
+  .account-create{
+    margin-top: 5px;
+  }
   .nav-menu{
     z-index: 99;
     max-height: 568px;
@@ -227,7 +244,7 @@ li.level-top a:hover{
     display: none;
   }
   .cartcheckoutwrap {
-    top: 114px;
+    top: 100%;
   }
   ul.nav{
     background-color: #537d96;
@@ -285,11 +302,14 @@ li.level-top a:hover{
   .count-container .limiter{
     width: 30%;
   }
-  .col-main .account-login{
-    margin-top: 100px;
-  }
 }
 @media (max-width: 767px){
+  .page-title{
+    margin-top: 25px;
+  }
+  .main-container.col2-right-layout{
+    margin-top: 110px;
+  }
   .nav-menu{
     z-index: 99;
     max-height: 568px;
@@ -384,10 +404,19 @@ li.level-top a:hover{
     width: 30%;
   }
   .col-main .account-login{
-    margin-top: 133px;
+    margin-top: 30px;
   }
 }
 @media (max-width: 479px){
+  .page-title{
+    margin-top: 80px!important;
+  }
+  .main-container.col2-right-layout{
+    margin-top: 165px;
+  }
+  .account-create{
+    margin-top: 80px;
+  }
   .wrapper{
     min-width: 100% !important;
   }
@@ -409,7 +438,7 @@ li.level-top a:hover{
     margin-left: 0;
   }
   .col-main .account-login{
-    margin-top: 180px;
+    margin-top: 85px;
   }
   .content.fieldset ul.form-list{
     padding-left: 0;
@@ -446,8 +475,7 @@ a.skip-cart {
 .main-container.col1-layout{
     position: relative;
     width: 100%;
-    margin: 0 auto;
-    padding: 0px;
+    padding: 25px;
     max-width: 100%;
 }
 .col-main{
