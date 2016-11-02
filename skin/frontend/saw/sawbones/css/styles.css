@@ -1010,7 +1010,12 @@ a.button:hover {
   text-decoration: none;
   color: #246b8f;
 }
-
+.button2.btn-update[value="update_qty"]:first-child{
+  display: none;
+}
+.std{
+  height: 400px;
+}
 @media only screen and (max-width: 770px) {
   .col2-set .buttons-set .button,
   .col2-set .buttons-set .button2 {
@@ -5598,6 +5603,11 @@ p.product-name a:hover {
   .block.block-related.left{
     width: 100%;
     margin-top: 275px;
+    padding-left: 30px;
+  }
+  .block.block-related.right{
+    padding-left: 30px;
+    width: 100%;
   }
   
 }
@@ -5619,7 +5629,14 @@ p.product-name a:hover {
     margin-bottom: 15px;
   }
   .product-view .product-shop{    
-    padding-left: 0px!important;
+    padding-left: 10px!important;
+  }
+  .block.block-related.left{
+    padding-left: 10px;
+  }
+  .block.block-related.right{
+    width: 100%;
+    padding-left: 10px;
   }
 }
 .product-view .ratings .rating-links {
@@ -6656,7 +6673,7 @@ p.product-name a:hover {
   }
   .cart-table .cart-footer-actions .btn-update,
   .cart-table .cart-footer-actions span.or {
-    display: none;
+    /*display: none;*/
   }
 
   .display-both-prices .cart-table td[data-rwd-tax-label]:before {

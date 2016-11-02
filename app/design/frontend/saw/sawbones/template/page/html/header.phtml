@@ -51,6 +51,15 @@
                     }
                 }
                 ?>
+                 <li class="nav-link w-nav-link">
+                     <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+                        <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
+                    <?php 
+                    else: ?>
+                            <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Sign In</a>
+                        <?php 
+                    endif; ?>
+                </li>
                
             </nav>
             <div class="menubutton w-nav-button">
@@ -61,10 +70,10 @@
              <?php echo $this->getChildHtml('topSearch') ?>
             <li id="btn-account" class="nav-link w-nav-link">
                     <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
-                        <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
+                        <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
                     <?php 
                 else: ?>
-                        <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Sign In</a>
+                        <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Sign In</a>
                     <?php 
                 endif; ?>
             </li>

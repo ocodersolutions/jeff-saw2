@@ -70,6 +70,20 @@ span.swatch-link {
     width: 79%;
     height: 100%;
 }
+.minicart-wrapper #cart-sidebar .product-image{
+	width: auto;
+}
+#cart-sidebar{
+	height: 300px;
+	overflow: scroll;
+}
+.minicart-wrapper #cart-sidebar .qty-wrapper input{
+	width: 20%;
+	text-align: center;
+}
+.minicart-wrapper #cart-sidebar .item{
+	border-bottom: 2px solid; 
+}
 .more-views{
 	min-height: 500px;
 	float: left;
@@ -250,7 +264,7 @@ span.swatch-link {
 }
 @media (max-width:479px){
 	.product-image{
-		height: 300px;
+		height: auto;
 	    overflow: hidden;
 	    width: 100%;
 	}

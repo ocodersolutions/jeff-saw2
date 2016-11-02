@@ -1,3 +1,4 @@
+
 .cart.display-single-price{
   margin-top: 60px;
 }
@@ -160,6 +161,9 @@ li.level-top a:hover{
   }
 }
 @media (min-width: 992px) and (max-width:1200px){
+  .button2{
+    width: 100%;
+  }
   .main-container{
     margin-top: 84px!important;
   }
@@ -304,6 +308,9 @@ li.level-top a:hover{
   }
 }
 @media (max-width: 767px){
+  .button2{
+    width: 100%;
+  }
   .page-title{
     margin-top: 25px;
   }
@@ -732,4 +739,33 @@ ul.sharing-links{
 }
 .pages ol{
   padding-left: 0;
+}
+.camera_caption{
+  opacity: 1!important;
+}
+.camera_wrap .camera_pag .camera_pag_ul{
+  width: 100%;
+  text-align: center!important;
+  right: 0px!important;
+}
+.camera_caption{
+  bottom: auto!important;
+  text-transform: none;
+}
+.cameraContent{
+  padding-top: 72px;
+}
+.camera_caption > div{
+  opacity: 1!important;
+}
+.camera_wrap .camera_pag .camera_pag_ul li{
+    background: #fff!important;
+    opacity: 0.5;
+}
+.camera_wrap .camera_pag .camera_pag_ul li span{
+    background: #fff!important;
+}
+.camera_pag .camera_pag_ul .cameracurrent{
+  opacity: 1!important;
+  background: #fff!important;
 }
