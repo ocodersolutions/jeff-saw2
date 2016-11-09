@@ -5,52 +5,40 @@
             <img class="sawboneslogo" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
             </a>
             <nav class="nav-menu w-nav-menu" role="navigation">
-            <?php 
-            $RootCategoryId=Mage::app()->getStore()->getRootCategoryId();
-            $_category = Mage::getModel('catalog/category')->load($RootCategoryId);
-            $_categories = $_category->getCategories();
-                // $_helper = Mage::helper('catalog/category');
-                // $_categories = $_helper->getStoreCategories();
-                if (count($_categories) > 0){
-                    //foreach($_categories as $_category){
-                        //$_category = Mage::getModel('catalog/category')->load($_category->getId());
-                        $_subcategories = $_category->getCategories();
-                        $_sub2categories = $_category->getChildrenCategories();
-                        if (count($_subcategories) > 0){?>
-                            <li class="nav-link w-nav-link">
-                                <a class="nav-link" href="<?php echo $_category->getUrl();?>" ><?php echo $_category->getName();?></a><span class="fa-blue"></span>
-                               <?php  if (count($_sub2categories) > 0){?>
-                                 <ul class="sub-menu">
-                                <?php foreach($_sub2categories as $_subcategory){
-                                     $_category2 = Mage::getModel('catalog/category')->load($_subcategory->getId());
-                                        $_subcategories2 = $_category2->getChildrenCategories();
-                                        $numchild = $_category2->getChildrenCount();; 
-                                    ?>
-                                        <li class="sub1 w-nav-link">
-                                            <a class="nav-link" href="<?php echo $_subcategory->getUrl();?>"><?php echo $_subcategory->getName();?></a><?php if($numchild >0){ ?><span class="fa-blue"></span><?php } ?>
-                                            <?php if(count($_subcategories2) >0 ){?>
-                                                <ul class="sub1-menu">
-                                                <?php foreach ($_subcategories2 as $_subcategory2) {?>
-                                                    <li class="sub1 w-nav-link">
-                                                        <a class="nav-link" href="<?php echo $_subcategory2->getUrl();?>"><?php echo $_subcategory2->getName();?></a><span class="fa-blue"></span>
-                                                    </li>
-                                                <?php }?>
 
-                                                </ul>
-                                            <?php }?>
-                                            
-                                        </li>
-                                    
-                                    <?php } ?> 
-                                 </ul>
-                                <?php
-                               }?>
-                            </li>
-                            <?php
-                       // }
-                    }
-                }
-                ?>
+                <?php $_helper=Mage::helper( 'catalog/category'); 
+                $_categories=$_helper->getStoreCategories(); 
+                if (count($_categories) > 0){ 
+                    foreach($_categories as $_category){ 
+                        $_category = Mage::getModel('catalog/category')->load($_category->getId()); 
+                        $_subcategories = $_category->getChildrenCategories(); 
+                        if (count($_subcategories) > 0){?>
+                <li class="nav-link w-nav-link">
+                    <a class="nav-link" href="<?php echo $_category->getUrl();?>" ><?php echo $_category->getName();?></a><span class="fa-blue"></span>
+                    <ul class="sub-menu">
+                        <?php foreach($_subcategories as $_subcategory){ 
+                            $_category2=Mage::getModel( 'catalog/category')->load($_subcategory->getId()); 
+                            $_subcategories2 = $_category2->getChildrenCategories(); 
+                            $numchild = $_category2->getChildrenCount(); ?>
+                        <li class="sub1 w-nav-link">
+                            <a class="nav-link" href="<?php echo $_subcategory->getUrl();?>">
+                                <?php echo $_subcategory->getName();?></a>
+                            <?php if($numchild>0){ ?><span class="fa-blue"></span>
+                            <?php } if (count($_subcategories2) > 0){ ?>
+                            <ul class="sub1-menu">
+                                <?php foreach ($_subcategories2 as $_subcategory2) {?>
+                                <li class="sub1 w-nav-link">
+                                    <a class="nav-link" href="<?php echo $_subcategory2->getUrl();?>">
+                                        <?php echo $_subcategory2->getName();?></a><span class="fa-blue"></span>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </li>
+                        <?php } } } ?>
+                    </ul>
+                </li>
+                <?php } } ?>
+
                  <li class="nav-link w-nav-link">
                      <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
                         <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
@@ -68,15 +56,24 @@
         </div>
         <div class="search">
              <?php echo $this->getChildHtml('topSearch') ?>
-            <li id="btn-account" class="nav-link w-nav-link">
-                    <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
-                        <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
-                    <?php 
-                else: ?>
-                        <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Sign In</a>
-                    <?php 
-                endif; ?>
-            </li>
+            <ul>
+                <li id="sign-in" class="nav-link w-nav-link">
+                        <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+                            <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
+                        <?php 
+                    else: ?>
+                            <a class="nav-link login" href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Sign In</a>
+                        <?php 
+                    endif; ?>
+                </li>
+
+                <li id="btn-account" class="nav-link w-nav-link">
+                    <img id="user" class="icon" src="/skin/frontend/saw/sawbones/images/user.svg" alt="User pictogram">
+                    <div id="header-account">
+                        <?php echo $this->getChildHtml('topLinks') ?>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="w-nav-overlay"></div>
     </div>
