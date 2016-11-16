@@ -11,7 +11,7 @@ if($this->getMode()!='grid'):
 
         <div class="listingcol1 w-col w-col-2 w-col-stack">
             <?php $_imgSize=300; ?>
-            <a style="color: black;" href="<?php echo $_product->getProductUrl() ?>"?><img style="height: 194px;" id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            <a style="color: black;" href="<?php echo $_product->getProductUrl() ?>"?><img style="height: auto; max-height: 100%;" id="product-collection-image-<?php echo $_product->getId(); ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
         </div>
         <div class="listingcol2 w-col w-col-5 w-col-stack">
             <div class="listingcol2paddingdiv">
