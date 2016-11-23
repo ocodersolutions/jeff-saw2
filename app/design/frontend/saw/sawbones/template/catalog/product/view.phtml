@@ -202,9 +202,11 @@
                 <?php $product_id = $this->getProduct()->getId();
                 $RelProduct = Mage::getModel('catalog/product')->load($product_id)->getRelatedProductIds();
                 foreach ($RelProduct as $id) {
-                $Product = Mage::getModel('catalog/product')->load($id);?>
+                $Product = Mage::getModel('catalog/product')->load($id);
+                $full_path_url = Mage::helper('catalog/image')->init($Product, 'thumbnail'); ?>
+
                     <div class="relatedsliders w-slide" style="transform: translateX(0px); opacity: 1;">
-                        <a href="<?php echo $Product->getProductUrl(); ?>"><div class="relatedprodpic"></div></a>
+                        <a href="<?php echo $Product->getProductUrl(); ?>"><div class="relatedprodpic"><img src="<?php echo $full_path_url; ?>"></div></a>
                         <div class="relatedproddetes">
                             <a href="<?php echo $Product->getProductUrl(); ?>"> <h4 class="relatedprodtitle"><?php echo $Product->getName(); ?></h4> </a>
                             <div class="detailslink related-proddetails"><a href="<?php echo $Product->getProductUrl(); ?>"> View Details<span class="fa view-details"></span></a>

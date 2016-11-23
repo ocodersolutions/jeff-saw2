@@ -549,14 +549,18 @@ nav.nav-menu.w-nav-menu li a.login{
 .relatedprodpic {
   width: 100%;
   height: 70%;
-  background-image: url("http://uploads.webflow.com/57994ac141136a134b02557d/57a671dbc1305fe209469d34_1301-2a.jpg");
+  /*background-image: url("http://uploads.webflow.com/57994ac141136a134b02557d/57a671dbc1305fe209469d34_1301-2a.jpg");*/
   background-position: 50% 50%;
   background-size: cover;
+  overflow: hidden;
+}
+.relatedprodpic img{
+	width: 100%;
 }
 
 .relatedproddetes {
   width: 100%;
-  height: 30%;
+  height: 100px;
   padding-top: 14px;
   background-color: #537d96;
   color: #fff;
@@ -969,7 +973,7 @@ nav.nav-menu.w-nav-menu li a.login{
 	.zoomContainer{
 		display: none;
 	}
-	#btn-account{
+	#btn-account, #sign-in{
 		display: none;
 	}
 	.btn-account-mobile{
