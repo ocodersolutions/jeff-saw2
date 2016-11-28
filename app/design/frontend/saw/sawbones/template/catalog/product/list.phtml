@@ -71,36 +71,37 @@ if($this->getMode()!='grid'):
 
 
         <div class="listingcol3 w-col w-col-5 w-col-stack">
-            <div class="height itemdetinfotext listinginfo">Model Type:&nbsp;...
-                <br>AnatomyMaterial:&nbsp;.....
+            <div class="height itemdetinfotext listinginfo">
+
+
+
+            Model Type:&nbsp;<?php  echo $this->htmlEscape($_product->getData('sku')); ?>
+
+                <br>AnatomyMaterial:&nbsp;
                 <br>Size:&nbsp;<?php //size
-            if($_product->isConfigurable()) {
-                $_helper2 = Mage::getModel('catalog/product_type_configurable')
-                            ->setProduct($_product);
-                $_subproducts = $_helper2
-                                ->getUsedProductCollection()
-                                ->addAttributeToSelect('size')
-                                ->addFilterByRequiredOptions(); 
+                    if($_product->isConfigurable()) {
+                        $_helper2 = Mage::getModel('catalog/product_type_configurable')
+                                    ->setProduct($_product);
+                        $_subproducts = $_helper2
+                                        ->getUsedProductCollection()
+                                        ->addAttributeToSelect('size')
+                                        ->addFilterByRequiredOptions(); 
+                        $_sizes = array();
+                        $_size_id = array();
+                        foreach ($_subproducts as $_subproduct) {
+                          $label = $_subproduct->getAttributeText('size');
+                          $_sizes[] = $label;
 
-                $_colors = array();
-                $_color_id = array();
-                foreach ($_subproducts as $_subproduct) {
-                  $label = $_subproduct->getAttributeText('size');
-                  $_colors[] = $label;
+                          if (!isset($_size_id[$label])) {
+                            $_size_id[$label] = $_subproduct->getData('size');
+                          }
+                        }
+                        $_size_swatch = array_unique($_sizes);
+                        foreach($_size_swatch as $_inner_option_id){
+                                    echo  " /".$_inner_option_id;
+                        }
+                    } ?>
 
-                  if (!isset($_color_id[$label])) {
-                    $_color_id[$label] = $_subproduct->getData('size');
-                  }
-                }
-                $_color_swatch = array_unique($_colors);
-                $len = count($array);
-                foreach($_color_swatch as $_inner_option_id){
-                            echo  " /".$_inner_option_id;
-                }
-
-            }
-
-            ?>
 
 
 
@@ -124,7 +125,6 @@ if($this->getMode()!='grid'):
                   }
                 }
                 $_color_swatch = array_unique($_colors);
-                $len = count($array);
                 foreach($_color_swatch as $_inner_option_id){
                             echo  " /".$_inner_option_id;
                 }
