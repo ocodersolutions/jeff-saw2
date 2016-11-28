@@ -182,6 +182,9 @@ li.level-top a:hover{
   .nav-link.w-nav-link{
     float: left;
   }
+  #sign-in, #btn-account{
+    float: none;
+  }
   .pager.filterbarcol2 .count-container .limiter{
     width: 26%;
   }

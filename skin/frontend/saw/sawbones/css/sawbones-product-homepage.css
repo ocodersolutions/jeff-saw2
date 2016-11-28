@@ -548,7 +548,7 @@ nav.nav-menu.w-nav-menu li a.login{
 
 .relatedprodpic {
   width: 100%;
-  height: 70%;
+  height: 100%!important;
   /*background-image: url("http://uploads.webflow.com/57994ac141136a134b02557d/57a671dbc1305fe209469d34_1301-2a.jpg");*/
   background-position: 50% 50%;
   background-size: cover;
@@ -595,16 +595,18 @@ nav.nav-menu.w-nav-menu li a.login{
 
 .whatshotpic {
   width: 100%;
-  height: 70%;
-  background-image: url("http://uploads.webflow.com/57994ac141136a134b02557d/57a68c57c3e841c509ec5b41_1505a.jpg");
+ /* background-image: url("http://uploads.webflow.com/57994ac141136a134b02557d/57a68c57c3e841c509ec5b41_1505a.jpg");*/
   background-position: 50% 68%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.whatshotpic img{
+  width: 100%;
+}
 .whatshotdetes {
   width: 100%;
   height: 30%;
+  margin: 0 auto;
   padding-top: 14px;
   background-color: #537d96;
   color: #fff;
@@ -616,6 +618,8 @@ nav.nav-menu.w-nav-menu li a.login{
   margin-bottom: 0px;
   background-color: transparent;
   color: #fff;
+  overflow: hidden;
+  max-height: 50px;
 }
 
 .listingcol3 {

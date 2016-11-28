@@ -216,12 +216,16 @@
 
                 <?php } ?>
                 </div>
+
+                <?php if(count($RelProduct) > 3){?>
                 <div class="w-slider-arrow-left">
                     <div class="prodslideicon w-icon-slider-left"></div>
                 </div>
                 <div class="w-slider-arrow-right">
                     <div class="prodslideicon w-icon-slider-right"></div>
                 </div>
+                <?php } ?>
+
             </div>
         </div>
     </div>
@@ -230,126 +234,23 @@
             <h2 class="h2 product-detail">What's Hot</h2>
             <div class="w-slider whatshotslider" data-animation="slide" data-duration="500" data-infinite="1">
                 <div class="w-slider-mask">
+                    <?php $products = Mage::getModel('catalog/product')->getCollection();
+                    $products->addAttributeToSelect(array('name', 'thumbnail', 'price')); 
+                    Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($products);
+                    Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($products); 
+                    $products->getSelect()->order('RAND()');
+                    $products->getSelect()->limit(12);
+                    foreach ($products as $product)  : ?>
+
                     <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
+                        <a href="<?php echo $product->getProductUrl()?>"><div class="whatshotpic"><img src="<?php echo Mage::helper('catalog/image')->init($product, 'thumbnail')->resize(257, 245)?>"></div></a>
                         <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
+                            <h4 class="whatshotprodtitle"><?php echo $product->getName()?></h4>
+                            <div class="detailslink related-proddetails"><a href="<?php echo $product->getProductUrl()?>">View Details<span class="fa view-details"></span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-slide whatshotslide" style="transform: translateX(0px); opacity: 1;">
-                        <div class="whatshotpic"></div>
-                        <div class="whatshotdetes">
-                            <h4 class="whatshotprodtitle">Distal Tibia Holder</h4>
-                            <div class="detailslink related-proddetails">View Details<span class="fa view-details"></span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="w-slider-arrow-left">
                     <div class="prodslideicon w-icon-slider-left"></div>
