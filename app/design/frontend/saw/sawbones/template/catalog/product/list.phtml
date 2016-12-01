@@ -71,74 +71,353 @@ if($this->getMode()!='grid'):
 
 
         <div class="listingcol3 w-col w-col-5 w-col-stack">
-            <div class="height itemdetinfotext listinginfo">
 
+              <div class="height itemdetinfotext listinginfo">SKU:&nbsp;<?php  echo $this->htmlEscape($_product->getData('sku')); ?>
+                <br>Model Type:&nbsp; 
+                <?php  $model_type = $this->htmlEscape($_product->getData('model_type'));
+                    switch ($model_type) {
+                        case 11:
+                            echo 'Accessories';
+                        break;
+                        case 54:
+                            echo 'Advanced Soft Tissue';
+                        break;
+                        case 55:
+                            echo 'Arthroscopy';
+                        break;
+                        case 56:
+                            echo 'Biomechanical';
+                        break;
+                        case 57:
+                            echo 'Blocks and Domes';
+                        break;
+                        case 58:
+                            echo 'Charts';
+                        break;
+                        case 59:
+                            echo 'Clamps and Holders';
+                        break;
+                        case 60:
+                            echo 'Cylinders';
+                        break;
+                        case 61:
+                            echo 'Digital File';
+                        break;
+                        case 62:
+                            echo 'Display Models';
+                        break;
+                        case 63:
+                            echo 'EZ-IO (Intraosseous Injection)';
+                        break;
+                        case 64:
+                            echo 'Implant Replica';
+                        break;
+                        case 65:
+                            echo 'Injection';
+                        break;
+                        case 66:
+                            echo 'Joint Injection';
+                        break;
+                        case 67:
+                            echo 'Ligaments and Tendons';
+                        break;
+                        case 68:
+                            echo 'M.I.S.';
+                        break;
+                        case 69:
+                            echo 'Multiple Fractures';
+                        break;
+                        case 70:
+                            echo 'N/A';
+                        break;
+                        case 71:
+                            echo 'Normal Anatomy';
+                        break;
+                        case 72:
+                            echo 'Other';
+                        break;
+                        case 73:
+                            echo 'Pathology';
+                        break;
+                        case 74:
+                            echo 'Pediatric';
+                        break;
+                        case 75:
+                            echo 'Pediatric Pathology';
+                        break;
+                        case 76:
+                            echo 'Single Fracture';
+                        break;
 
+                        default:
+                            echo '';
+                        break;
+                    }
+                ?>
+                
+                <br>AnatomyMaterial:&nbsp; 
+                <?php  $anatomy = $this->htmlEscape($_product->getData('anatomy')); 
 
-            Model Type:&nbsp;<?php  echo $this->htmlEscape($_product->getData('sku')); ?>
+                    switch ($anatomy) {
+                        case 14:
+                            echo 'Tibia';
+                        break;
+                        case 15:
+                            echo 'Knee';
+                        break;
+                        case 16:
+                            echo 'Scapula-Clavicle';
+                        break;
+                        case 17:
+                            echo 'Foot';
+                        break;
+                        case 18:
+                            echo 'Femur';
+                        break;
+                        case 19:
+                            echo 'Humerus';
+                        break;
+                        case 20:
+                            echo 'Radius';
+                        break;
+                        case 21:
+                            echo 'Mandible-Maxilla';
+                        break;
+                        case 22:
+                            echo 'Head and Neck';
+                        break;
+                        case 23:
+                            echo 'Pelvis-Full';
+                        break;
+                        case 24:
+                            echo 'Spine-Lumbar';
+                        break;
+                        case 25:
+                            echo 'Hip';
+                        break;
+                        case 26:
+                            echo 'Foot-Ankle';
+                        break;
+                        case 27:
+                            echo 'Ankle';
+                        break;
+                        case 28:
+                            echo 'Thoracic-Abdominal';
+                        break;
+                        case 29:
+                            echo 'Leg';
+                        break;
+                        case 30:
+                            echo 'Wrist';
+                        break;
+                        case 31:
+                            echo 'Tibia-Fibula';
+                        break;
+                        case 32:
+                            echo 'Ulna-Radius';
+                        break;
+                        case 33:
+                            echo 'Elbow';
+                        break;
+                        case 34:
+                            echo 'Fibula';
+                        break;
+                        case 35:
+                            echo 'Shoulder';
+                        break;
+                        case 36:
+                            echo 'Skull-Full';
+                        break;
+                        case 37:
+                            echo 'Skull-Partial';
+                        break;
+                        case 38:
+                            echo 'Sternum-Ribs';
+                        break;
+                        case 39:
+                            echo 'Normal Anatomy';
+                        break;
+                        case 40:
+                            echo 'Ulna';
+                        break;
+                        case 41:
+                            echo 'Jaw';
+                        break;
+                        case 42:
+                            echo 'Sacrum';
+                        break;
+                        case 43:
+                            echo 'Phalanx';
+                        break;
+                        case 44:
+                            echo 'Patella';
+                        break;
+                        case 45:
+                            echo 'Forelimb';
+                        break;
+                        case 46:
+                            echo 'Pelvis-Partial';
+                        break;
+                        case 47:
+                            echo 'Spine';
+                        break;
+                        case 48:
+                            echo 'Carpals';
+                        break;
+                        case 49:
+                            echo 'Arm';
+                        break;
+                        case 50:
+                            echo 'Spine-Thoracic';
+                        break;
+                        case 51:
+                            echo 'Hand-Wrist';
+                        break;
+                        case 52:
+                            echo 'Hand';
+                        break;
+                        case 53:
+                            echo 'N/A';
+                        break;
 
-                <br>AnatomyMaterial:&nbsp;
-                <br>Size:&nbsp;<?php //size
-                    if($_product->isConfigurable()) {
-                        $_helper2 = Mage::getModel('catalog/product_type_configurable')
-                                    ->setProduct($_product);
-                        $_subproducts = $_helper2
-                                        ->getUsedProductCollection()
-                                        ->addAttributeToSelect('size')
-                                        ->addFilterByRequiredOptions(); 
-                        $_sizes = array();
-                        $_size_id = array();
-                        foreach ($_subproducts as $_subproduct) {
-                          $label = $_subproduct->getAttributeText('size');
-                          $_sizes[] = $label;
+                        default:
+                            echo '';
+                        break;
+                    }
+                ?>
 
-                          if (!isset($_size_id[$label])) {
-                            $_size_id[$label] = $_subproduct->getData('size');
-                          }
-                        }
-                        $_size_swatch = array_unique($_sizes);
-                        foreach($_size_swatch as $_inner_option_id){
-                                    echo  " /".$_inner_option_id;
-                        }
-                    } ?>
+                <br>Size:&nbsp;
+                <?php  $size = $this->htmlEscape($_product->getData('size'));
+                    switch ($size) {
+                        case 13:
+                            echo 'Large';
+                        break;
+                        case 123:
+                            echo 'Medium';
+                        break;
+                        case 124:
+                            echo 'Small';
+                        break;
+                        case 125:
+                            echo 'Pediatric';
+                        break;
+                        case 127:
+                            echo 'Other';
+                        break;
 
+                        default:
+                            echo 'N/A';
+                        break;
+                    }
+                ?>
+                <br>Color:&nbsp; 
+                <?php  $color = $this->htmlEscape($_product->getData('color'));
+                    switch ($color) {
+                        case 9:
+                            echo 'Off White';
+                        break;
+                        case 96:
+                            echo 'White';
+                        break;
+                        case 97:
+                            echo 'Clear';
+                        break;
+                        case 98:
+                            echo 'Tan';
+                        break;
+                        case 99:
+                            echo 'Black';
+                        break;
+                        case 100:
+                            echo 'Blue';
+                        break;
+                        case 101:
+                            echo 'Brown';
+                        break;
+                        case 102:
+                            echo 'Clear';
+                        break;
+                        case 103:
+                            echo 'Dark Red';
+                        break;
+                        case 104:
+                            echo 'Gray';
+                        break;
+                        case 105:
+                            echo 'Green';
+                        break;
+                        case 106:
+                            echo 'N/A';
+                        break;
+                        case 107:
+                            echo 'Off White';
+                        break;
+                        case 108:
+                            echo 'Other';
+                        break;
+                        case 109:
+                            echo 'Pink';
+                        break;
+                        case 110:
+                            echo 'Red';
+                        break;
+                        case 111:
+                            echo 'Red/Brown';
+                        break;
+                        case 112:
+                            echo 'Tan';
+                        break;
+                        case 113:
+                            echo 'Transparent';
+                        break;
+                        case 114:
+                            echo 'White';
+                        break;
+                        case 115:
+                            echo 'White/Transparent';
+                        break;
 
+                        default:
+                            echo 'Yellow';
+                        break;
+                    }
+                ?>
+               
+                <br>Orientation:&nbsp;
+                 <?php  $orientation = $this->htmlEscape($_product->getData('orientation'));
+                    switch ($orientation) {
+                        case 12:
+                            echo 'Left';
+                        break;
+                        case 117:
+                            echo 'Right';
+                        break;
+                        case 118:
+                            echo 'Proximal';
+                        break;
+                        case 119:
+                            echo 'Distal';
+                        break;
+                        case 120:
+                            echo 'Medial';
+                        break;
+                        case 121:
+                            echo 'Lateral';
+                        break;
 
+                        default:
+                            echo 'N/A';
+                        break;
+                    }
 
-                <br>Color:&nbsp; <?php // color
-            if($_product->isConfigurable()) {
-                $_helper2 = Mage::getModel('catalog/product_type_configurable')
-                            ->setProduct($_product);
-                $_subproducts = $_helper2
-                                ->getUsedProductCollection()
-                                ->addAttributeToSelect('color')
-                                ->addFilterByRequiredOptions(); 
-
-                $_colors = array();
-                $_color_id = array();
-                foreach ($_subproducts as $_subproduct) {
-                  $label = $_subproduct->getAttributeText('color');
-                  $_colors[] = $label;
-
-                  if (!isset($_color_id[$label])) {
-                    $_color_id[$label] = $_subproduct->getData('color');
-                  }
-                }
-                $_color_swatch = array_unique($_colors);
-                foreach($_color_swatch as $_inner_option_id){
-                            echo  " /".$_inner_option_id;
-                }
-
-            }
-
-            ?>
-                <br>Orientation:&nbsp;...
+                ?>
                 <br>
                 <br><span class="itemdetailtextsmall">
             <?php echo substr($_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description'),0,110); ?>
                         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('Learn More') ?></a>
         </span>
             </div>
+        
         </div>
     </div>
     <?php endforeach; ?>
